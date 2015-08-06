@@ -224,6 +224,26 @@ describe('arm', function () {
           done();
         });
       });
+
+      it.only('delete for custom role should work', function (done) {
+        // TODO: Create a custom role with random name once create code is added.
+        // Replace below value to the id of created custom role.
+        
+        var id = '/subscriptions/c36958e0-4307-409e-a493-eaaafd0ee20a/providers/Microsoft.Authorization/roleDefinitions/96fc017d-8b29-4a54-9a0f-b95768504026';
+        suite.execute('role delete %s --json -q --passthru', id, function (result) {
+          result.exitStatus.should.equal(0);
+          var roles = JSON.parse(result.text);
+          roles.some(function (res) {
+            return res.id === id;
+          }).should.be.true;
+          
+          // Deleting the same role again should result in error
+          suite.execute('role delete %s --json -q --passthru', id, function (result) {
+            result.exitStatus.should.not.equal(0);
+            done();
+          });
+        });
+      });
     });
 
     describe('create ', function () {

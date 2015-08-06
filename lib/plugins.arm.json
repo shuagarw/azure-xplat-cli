@@ -19508,6 +19508,65 @@
               "description": "the role definition name"
             }
           ]
+        },
+        {
+          "name": "delete",
+          "description": "Deletes an existing custom role definition in Azure RBAC. The role definition to delete is provided using the Id property of the role definition.Use list or show roleName to determine the role definition to be deleted.",
+          "fullName": "role delete",
+          "usage": "[options] [id]",
+          "filePath": "commands/arm/role/role.definition._js",
+          "options": [
+            {
+              "flags": "-v, --verbose",
+              "required": 0,
+              "optional": 0,
+              "bool": true,
+              "short": "-v",
+              "long": "--verbose",
+              "description": "use verbose output"
+            },
+            {
+              "flags": "--json",
+              "required": 0,
+              "optional": 0,
+              "bool": true,
+              "long": "--json",
+              "description": "use json output"
+            },
+            {
+              "flags": "--id <id>",
+              "required": -6,
+              "optional": 0,
+              "bool": true,
+              "long": "--id",
+              "description": "Id of the Role definition to be deleted"
+            },
+            {
+              "flags": "-q --quiet",
+              "required": 0,
+              "optional": 0,
+              "bool": true,
+              "short": "-q",
+              "long": "--quiet",
+              "description": "If set, does not prompt for a confirmation before deleting the custom role"
+            },
+            {
+              "flags": "--passthru",
+              "required": 0,
+              "optional": 0,
+              "bool": true,
+              "long": "--passthru",
+              "description": "If set, displays the properties of deleted custom role"
+            },
+            {
+              "flags": "--subscription <subscription>",
+              "required": -16,
+              "optional": 0,
+              "bool": true,
+              "long": "--subscription",
+              "description": "Subscription id or name of where the role assignment is from."
+            }
+          ]
         }
       ],
       "categories": {
