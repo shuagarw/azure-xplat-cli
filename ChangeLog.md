@@ -1,4 +1,6 @@
-//To Release - Version 0.9.12
+## 2015.11.18 Version 0.9.12
+* Authorization
+  * Fixed json output format for role definition commands
 * VM
   * Chef Extension
     * Implemented new option --client-pem for set-chef extension commands
